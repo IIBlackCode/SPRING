@@ -12,7 +12,7 @@ public class TEST1_MariaDBConnectioncTest {
 	
 	static String ip = "49.50.166.134";
 	static String port = "3306";
-	static String dbName = "CORONA";
+	static String dbName = "BOOK_EX";
 	
 	private static final String DRIVER 	= mariaDB;
 //	private static final String URL		= "jdbc:mariadb://192.168.219.130:3306/book_ex?useSSL=false&serverTimezone=UTC";
