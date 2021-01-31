@@ -36,13 +36,25 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.4.6</version>
 		</dependency>
-		
 		<!-- 82 PAGE : MyBatis-Spring 라이브러리 -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>
 		    <version>2.0.3</version>
 		</dependency>
+		<!-- 82 PAGE : spring-jdbc 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- 82 PAGE : spring-test 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
 	
 		<!-- Spring -->
 		<dependency>
