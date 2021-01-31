@@ -40,4 +40,4 @@ public class TEST3_MybatisTest {
 		}
 	}
 	
-}
+}//The end of class
