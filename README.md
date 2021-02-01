@@ -30,3 +30,13 @@ Spring Web Project
 	4.2 MyBatis와의 구성
 	4.3 MyBatis 연동을 위한 준비
 	4.4 MySQL과의 연결을 담당하는 DataSource 설정하기
+	4.5 MyBatis연결
+	4.6 작업 내역의 정리
+
+-[CHAPTER 05] 모델2 방식과 스프링 MVC
+
+	5.1 모델2 패턴의 이해
+	5.2 스프링 MVC의 컨트롤러
+	5.3
+
+	
