@@ -39,9 +39,17 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:mappers/**/*Mapper.xml</value>
-				<value>classpath:org/zerock/**/mybatis/*Mapper.xml</value>
 			</list>
 		</property>
 	</bean>
 
+	<!-- 134 PAGE sqlsession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" 
+		destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"> 
+		</constructor-arg>
+	</bean>
+	
+	<!-- 136 PAGE @Reporitory 스캔 -->
+	<context:component-scan base-package="org.zerock.persistence" />
 </beans>
