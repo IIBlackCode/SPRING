@@ -37,6 +37,20 @@ Spring Web Project
 
 	5.1 모델2 패턴의 이해
 	5.2 스프링 MVC의 컨트롤러
-	5.3
+	5.3 WAS 없이 컨트롤러를 테스트하기
+	
+-[CHAPTER 06] 스프링 + MyBatis
+	
+	6.1 테이블 생성 및 개발준비
+	6.2 DAO 인터페이스의 작성
+	6.3 XML Mapper의 작성
+	6.4 DAO 인터페이스의 구현
+	6.5 스프링에 빈으로 등록하기
+	6.6 테스트 코드의 작성
+	6.7 MyBatis의 로그 log4jdbc-log4j2
+	6.8 MyBatis의 #{} 문법
+	6.9 정리
+	
+	
 
 	
