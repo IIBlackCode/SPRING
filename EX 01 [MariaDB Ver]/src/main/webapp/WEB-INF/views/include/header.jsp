@@ -10,8 +10,9 @@
 	content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
 	name='viewport'>
 <!-- Bootstrap 3.3.4 -->
-<link href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
+<link
+	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
 <!-- Font Awesome Icons -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -21,11 +22,13 @@
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- Theme style -->
-<link href="<%=request.getContextPath() %>/resources/dist/css/AdminLTE.min.css" rel="stylesheet"
-	type="text/css" />
+<link
+	href="<%=request.getContextPath()%>/resources/dist/css/AdminLTE.min.css"
+	rel="stylesheet" type="text/css" />
 <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
-<link href="<%=request.getContextPath() %>/resources/dist/css/skins/_all-skins.min.css"
+<link
+	href="<%=request.getContextPath()%>/resources/dist/css/skins/_all-skins.min.css"
 	rel="stylesheet" type="text/css" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,7 +40,8 @@
 
 </head>
 <!-- jQuery 2.1.4 -->
-<script src="<%=request.getContextPath() %>/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
 
@@ -47,10 +51,9 @@
 				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg">
 					<h4>
-						<b>코드로 배우는</b><br> 
-						<b>스프링 웹 프로젝트</b><br> 
+						<b>코드로 배우는</b><br> <b>스프링 웹 프로젝트</b><br>
 					</h4>
-				</span>
+			</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -75,7 +78,8 @@
 										<li>
 											<!-- start message --> <a href="#">
 												<div class="pull-left">
-													<img src="<%=request.getContextPath() %>/resources/dist/img/user7-128x128.jpg"
+													<img
+														src="<%=request.getContextPath()%>/resources/dist/img/user7-128x128.jpg"
 														class="img-circle" alt="User Image" />
 												</div>
 												<h4>
@@ -88,7 +92,8 @@
 										<!-- end message -->
 										<li><a href="#">
 												<div class="pull-left">
-													<img src="<%=request.getContextPath() %>/resources/dist/img/user3-128x128.jpg"
+													<img
+														src="<%=request.getContextPath()%>/resources/dist/img/user3-128x128.jpg"
 														class="img-circle" alt="user image" />
 												</div>
 												<h4>
@@ -99,7 +104,8 @@
 										</a></li>
 										<li><a href="#">
 												<div class="pull-left">
-													<img src="<%=request.getContextPath() %>/resources/dist/img/user4-128x128.jpg"
+													<img
+														src="<%=request.getContextPath()%>/resources/dist/img/user4-128x128.jpg"
 														class="img-circle" alt="user image" />
 												</div>
 												<h4>
@@ -110,7 +116,8 @@
 										</a></li>
 										<li><a href="#">
 												<div class="pull-left">
-													<img src="<%=request.getContextPath() %>/resources/dist/img/user3-128x128.jpg"
+													<img
+														src="<%=request.getContextPath()%>/resources/dist/img/user3-128x128.jpg"
 														class="img-circle" alt="user image" />
 												</div>
 												<h4>
@@ -121,7 +128,8 @@
 										</a></li>
 										<li><a href="#">
 												<div class="pull-left">
-													<img src="<%=request.getContextPath() %>/resources/dist/img/user4-128x128.jpg"
+													<img
+														src="<%=request.getContextPath()%>/resources/dist/img/user4-128x128.jpg"
 														class="img-circle" alt="user image" />
 												</div>
 												<h4>
@@ -242,15 +250,15 @@
 						<!-- User Account: style can be found in dropdown.less -->
 						<li class="dropdown user user-menu"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <img
-								src="<%=request.getContextPath() %>/resources/dist/img/user2-160x160.jpg" class="user-image"
-								alt="User Image" /> <span class="hidden-xs">Alexander
+								src="<%=request.getContextPath()%>/resources/dist/img/user2-160x160.jpg"
+								class="user-image" alt="User Image" /> <span class="hidden-xs">Alexander
 									Pierce</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
 								<li class="user-header"><img
-									src="<%=request.getContextPath() %>/resources/dist/img/user2-160x160.jpg" class="img-circle"
-									alt="User Image" />
+									src="<%=request.getContextPath()%>/resources/dist/img/user2-160x160.jpg"
+									class="img-circle" alt="User Image" />
 									<p>
 										Alexander Pierce - Web Developer <small>Member since
 											Nov. 2012</small>
@@ -291,7 +299,8 @@
 				<!-- Sidebar user panel -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="<%=request.getContextPath() %>/resources/dist/img/user2-160x160.jpg"
+						<img
+							src="<%=request.getContextPath()%>/resources/dist/img/user2-160x160.jpg"
 							class="img-circle" alt="User Image" />
 					</div>
 					<div class="pull-left info">
