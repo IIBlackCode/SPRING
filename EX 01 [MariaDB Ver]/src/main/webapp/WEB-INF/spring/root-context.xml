@@ -9,41 +9,28 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
-	<!--[9] 160 PAGE dataSource 설정, MariaDB Setting -->
+	<!--[1~3] 172 PAGE-->
+	<!--[1] 172 PAGE dataSource 설정, MariaDB Setting -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <!-- <property name="driverClassName" value="org.mariadb.jdbc.Driver"/> -->
-        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/><!-- 139page 수정 -->
-        <property name="url" value="jdbc:log4jdbc:mariadb://192.168.219.110:3306/book_ex?useSSL=false"></property>
-        <property name="username" value="root"/>
-        <property name="password" value="1234"/>
-    </bean>
+		<property name="driverClassName" 	value="org.mariadb.jdbc.Driver" />
+		<property name="url" 				value="jdbc:mariadb://49.50.166.134:3306/BOOK_EX?useSSL=false"></property>
+		<property name="username" value="root" />
+		<property name="password" value="1234" />
+	</bean>
     
+	<!--[2] 172 PAGE sqlSessionFactory 설정 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		
 		<property name="dataSource" ref="dataSource"></property>
-		
-		<!-- [page 93 Mybatis Test Code : MybatisTest.class] -->
-		<property name="configLocation" 
-			value="classpath:/mybatis-config.xml"></property>
-		
-		<!-- [page 132] 20190530-->
-		<!-- <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property> -->
+		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:mappers/**/*Mapper.xml</value>
-				<value>classpath:org/zerock/**/mybatis/*Mapper.xml</value>
 			</list>
 		</property>
 	</bean>
 	
-	
-	
-	<!-- 
-		[page 134] sqlSession 추가 Test code : MemberDAOimpl 
-		SQL문 실행할 sqlSession추가해서 DAO를 구현한 클래스에서 동작한다.
-	-->
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" 
-		destroy-method="clearCache">
+	<!--[3] 172 PAGE sqlSession 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"> 
 		</constructor-arg>
 	</bean>
@@ -53,7 +40,5 @@
 		@Repository에서 sqlSession으로 SQL쿼리 동작
 	-->
 	<context:component-scan base-package="Document" />
-	<context:component-scan base-package="org.zerock.board.persistence" />
-	<context:component-scan base-package="org.zerock.board.service" />
 	
 </beans>
