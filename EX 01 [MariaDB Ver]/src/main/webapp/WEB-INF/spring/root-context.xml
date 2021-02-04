@@ -41,5 +41,6 @@
 	-->
 	<context:component-scan base-package="Document" />
 	<context:component-scan base-package="org.zerock.persistence" />
+	<context:component-scan base-package="org.zerock.service" />
 	
 </beans>
