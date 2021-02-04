@@ -12,51 +12,50 @@ import org.zerock.domain.BoardVO;
 
 
 @Repository
-public class BoardDao implements IBoardDao{
+public class BoardDao implements BoardDaoImpl{
 	
 	@Inject
 	private SqlSession session;
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardDao.class);
 	
-//	private static String namespace = "org.zerock.board.mapper.BoardMapper";
-	private static String namespace = "org.zerock.board.mybatis.BoardMapper";
+	private static String namespace = "org.zerock.mapper.BoardMapper";
 	
 	@Override
-	public void boardCreate(BoardVO vo) throws Exception {
+	public void create(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardCreate() :" + vo);
-		session.insert(namespace+".boardCreate",vo);
+		session.insert(namespace+".create",vo);
 	}
 
 	@Override
-	public BoardVO boardSelect(Integer bno) throws Exception {
+	public BoardVO read(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardSelect() :" + bno);
-		return session.selectOne(namespace+".boardSelect",bno);
+		return session.selectOne(namespace+".read",bno);
 	}
 
 	@Override
-	public int boardUpdate(BoardVO vo) throws Exception {
+	public int update(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardUpdate() :" + vo.toString());
 		logger.info("[boardUpdate() Method] bno :",session.update(namespace+".boardUpdate"));
-		return session.update(namespace+".boardUpdate",vo);
+		return session.update(namespace+".update",vo);
 	}
 
 	@Override
-	public void boardDelete(Integer bno) throws Exception {
+	public void delete(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardDelete() :" + bno);
 		logger.info("[boardDelete() Method] bno :"+ bno);
-		session.delete(namespace+".boardDelete",bno);
+		session.delete(namespace+".delete",bno);
 	}
 
 	@Override
-	public List<BoardVO> boardSelectAll() throws Exception {
+	public List<BoardVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 //		System.out.println("[Dao] boardListAll()" + session.selectList(namespace+".boardSelectAll").toString());	
-		return session.selectList("org.zerock.board.mybatis.BoardTestMapper"+".boardSelectAll");
+		return session.selectList("org.zerock.board.mybatis.BoardTestMapper"+".listAll");
 	}
 
 	@Override

@@ -15,7 +15,7 @@ import Document.test.persistence.MemberDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
-public class TEST5_MemberDAOTest {
+public class TEST05_MemberDAOTest {
 	
 	@Inject
 //	root-context.xml에 등록된 SqlSessionFactory 주입

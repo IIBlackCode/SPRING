@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
-public class TEST2_DataSourceTest {
+public class TEST02_DataSourceTest {
 	
 	@Inject
 	private DataSource dataSource;

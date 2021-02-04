@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 import org.junit.Test;
 //MySQLConnectioncTest 클래스 작성 page 77 20190526
-public class TEST1_MariaDBConnectioncTest {
+public class TEST01_MariaDBConnectioncTest {
 	
 	static String mariaDB = "org.mariadb.jdbc.Driver";
 	String mysql = "com.mysql.cj.jdbc.Driver";

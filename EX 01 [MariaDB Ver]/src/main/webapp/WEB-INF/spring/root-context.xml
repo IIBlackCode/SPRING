@@ -40,5 +40,6 @@
 		@Repository에서 sqlSession으로 SQL쿼리 동작
 	-->
 	<context:component-scan base-package="Document" />
+	<context:component-scan base-package="org.zerock.persistence" />
 	
 </beans>

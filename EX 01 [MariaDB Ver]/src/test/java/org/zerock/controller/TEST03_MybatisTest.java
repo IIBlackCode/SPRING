@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
-public class TEST3_MybatisTest {
+public class TEST03_MybatisTest {
 	
 	@Inject
 //	root-context.xml에 등록된 SqlSessionFactory 주입

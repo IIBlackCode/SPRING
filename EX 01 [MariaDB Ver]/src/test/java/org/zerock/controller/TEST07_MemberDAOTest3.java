@@ -18,13 +18,13 @@ import Document.test.persistence.MemberDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
-public class TEST7_MemberDAOTest3 {
+public class TEST07_MemberDAOTest3 {
 	
 	@Inject
 //	root-context.xml에 등록된 SqlSessionFactory 주입
 	private MemberDAO memberDAO;
 	
-	private static final Logger logger = LoggerFactory.getLogger(TEST7_MemberDAOTest3.class);
+	private static final Logger logger = LoggerFactory.getLogger(TEST07_MemberDAOTest3.class);
 	
 	@Test 
 	public void testReadMember1() throws Exception {

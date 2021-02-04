@@ -19,7 +19,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
 	</insert>
 	
 	<!-- 게시물의 조회에 사용하는 SQL -->
-	<select id="select" resultType="org.zerock.domain.BoardVO">
+	<select id="read" resultType="org.zerock.domain.BoardVO">
 	SELECT * FROM tbl_board WHERE bno = #{bno}
 	</select>
 	
@@ -32,7 +32,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
 	</update>
  	
 	<!-- 게시물 삭제에 사용하는 SQL -->
- 	<delete id="boardDelete">
+ 	<delete id="delete">
  	DELETE FROM tbl_board WHERE bno = #{bno}
  	</delete>
  	<!-- <update id="delete">

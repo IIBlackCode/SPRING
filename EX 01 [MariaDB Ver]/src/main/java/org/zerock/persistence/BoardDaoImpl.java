@@ -6,18 +6,18 @@ import org.zerock.domain.BoardVO;
 //import org.zerock.domain.Criteria;
 
 
-public interface IBoardDao {
+public interface BoardDaoImpl {
 	
-	public void boardCreate(BoardVO vo) throws Exception;
+	public void create(BoardVO vo) throws Exception;
 	
-	public BoardVO boardSelect(Integer bno) throws Exception;
+	public BoardVO read(Integer bno) throws Exception;
 	
-	public int boardUpdate(BoardVO vo) throws Exception;
+	public int update(BoardVO vo) throws Exception;
 	
-	public void boardDelete(Integer bno) throws Exception;
+	public void delete(Integer bno) throws Exception;
 	
 	/*게시글 리스트 조회*/
-	public List<BoardVO> boardSelectAll() throws Exception;
+	public List<BoardVO> listAll() throws Exception;
 	
 	/*게시글 페이징 처리*/
 	public List<BoardVO> boardListPage(int page) throws Exception;

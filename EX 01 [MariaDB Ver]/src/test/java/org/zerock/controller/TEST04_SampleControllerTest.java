@@ -20,13 +20,13 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
-public class TEST4_SampleControllerTest {
+public class TEST04_SampleControllerTest {
 	
 	@Inject
 //	root-context.xml에 등록된 SqlSessionFactory 주입
 	private SqlSessionFactory sqlFactory;
 	
-	private static final Logger logger = LoggerFactory.getLogger(TEST4_SampleControllerTest.class);
+	private static final Logger logger = LoggerFactory.getLogger(TEST04_SampleControllerTest.class);
 	
 	@Inject
 	private WebApplicationContext wac;
