@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	[page 131] 실행할 쿼리문 등록
+// 1. Interface로 실행할 작업 등록
+// 2. 실행할 쿼리문 Mapper 등록
+// 3. 해당 인터페이스를 Overriding으로 구현
+-->
+
+<!-- 
+
+	root-context.xml에 mapperLocations에 mapper 경로 추가
+
+ -->
+<mapper namespace="org.zerock.board.mybatis.BoardTestMapper">
+ 	<select id="boardSelectAll" resultType="org.zerock.board.domain.BoardVO">
+ 	<![CDATA[
+	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		AND del_yn = 'n'
+ 		ORDER BY bno DESC
+ 	]]>
+ 	</select>
+ 	
+ 	
+ 	
+</mapper>
