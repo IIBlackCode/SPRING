@@ -23,7 +23,7 @@ public class DataTEST2_SelectBoard {
 	
 	@Test
 	public void testRead() throws Exception {
-		logger.info(boardDao.boardSelect(28).toString());
+		logger.info(boardDao.boardSelect(0).toString());
 	}
 
 }

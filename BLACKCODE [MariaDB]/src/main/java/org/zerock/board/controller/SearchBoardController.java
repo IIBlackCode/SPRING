@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.zerock.board.domain.PageMaker;
 import org.zerock.board.domain.SearchCriteria;
-import org.zerock.board.service.BoardService;
+import org.zerock.board.service.IBoardService;
 
 @Controller
 @RequestMapping("/sboard/*")
@@ -20,7 +20,7 @@ public class SearchBoardController {
 	private static final Logger logger = LoggerFactory.getLogger(SearchBoardController.class);
 	
 	@Inject
-	private BoardService boardService;
+	private IBoardService boardService;
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void listPage(@ModelAttribute("criteria") SearchCriteria criteria, Model model) throws Exception{

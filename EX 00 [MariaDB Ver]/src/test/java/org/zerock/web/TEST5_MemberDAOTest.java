@@ -30,11 +30,11 @@ public class TEST5_MemberDAOTest {
 		
 		MemberVO memberVO= new MemberVO();
 		
-		memberVO.setUserid("testID_02");
-		memberVO.setUserpw("testPW_02");
-		memberVO.setUsername("TestNAME_02");
+		memberVO.setUserid("testID_01");
+		memberVO.setUserpw("testPW_01");
+		memberVO.setUsername("TestNAME_01");
 //		memberVO.setUseremail("test2@test.com");
-		memberVO.setEmail("test02@test.com");
+		memberVO.setEmail("test01@test.com");
 		
 		memberDAO.insertMember(memberVO);
 	}

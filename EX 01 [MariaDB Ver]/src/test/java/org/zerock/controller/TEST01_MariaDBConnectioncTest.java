@@ -10,7 +10,7 @@ public class TEST01_MariaDBConnectioncTest {
 	static String mariaDB = "org.mariadb.jdbc.Driver";
 	String mysql = "com.mysql.cj.jdbc.Driver";
 	
-	static String ip = "49.50.166.134";
+	static String ip = "192.168.219.190";
 	static String port = "3306";
 	static String dbName = "BOOK_EX";
 	

@@ -19,7 +19,7 @@ import org.zerock.board.domain.BoardVO;
 import org.zerock.board.domain.Criteria;
 import org.zerock.board.domain.PageMaker;
 import org.zerock.board.ipChecker.ClientIp;
-import org.zerock.board.service.BoardService;
+import org.zerock.board.service.IBoardService;
 
 @Controller
 @RequestMapping("/board/*")
@@ -28,7 +28,7 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Inject
-	private BoardService boardService;
+	private IBoardService boardService;
 	
 //	@RequestMapping(value = "/success", method = RequestMethod.GET)
 //	public String success() throws Exception{

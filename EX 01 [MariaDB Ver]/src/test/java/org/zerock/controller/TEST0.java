@@ -17,9 +17,9 @@ public class TEST0 {
 
 	private String driver = mariaDB;
 	
-	private String ip = "49.50.166.134";
+	private String ip = "192.168.219.190";
 	private String port = "3306";
-	private String dbName = "CORONA";
+	private String dbName = "BOOK_EX";
 	
 	private String dataBaseUrl = "jdbc:mysql://"+ip+":"+port+"/"+dbName+"?serverTimezone=UTC";
 	private String dataBaseId = "root";
