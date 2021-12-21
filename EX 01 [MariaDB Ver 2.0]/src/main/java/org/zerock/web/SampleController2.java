@@ -18,7 +18,7 @@ public class SampleController2 {
 		logger.info("[ "+log+" is called ]");
 		
 	}
-	@RequestMapping("SampleController2")
+	@RequestMapping("Sample/SampleController2")
 	public String testList( @ModelAttribute("msg") String msg) {
 		loggerTest("SampleController2");
 		return "SampleController2";

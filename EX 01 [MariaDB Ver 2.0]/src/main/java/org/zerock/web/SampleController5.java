@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.ProductVO;
 
 @Controller
-@RequestMapping("SampleController5")
+@RequestMapping("Sample/SampleController5")
 public class SampleController5 {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SampleController5.class);

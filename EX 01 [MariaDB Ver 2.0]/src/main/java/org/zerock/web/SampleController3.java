@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.ProductVO;
 
 @Controller
-@RequestMapping("SampleController3")
+@RequestMapping("Sample/SampleController3")
 public class SampleController3 {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SampleController3.class);

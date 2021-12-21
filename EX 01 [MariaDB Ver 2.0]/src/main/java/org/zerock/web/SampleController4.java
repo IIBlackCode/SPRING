@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.ProductVO;
 
 @Controller
-@RequestMapping("SampleController4")
+@RequestMapping("Sample/SampleController4")
 public class SampleController4 {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SampleController4.class);
@@ -29,7 +29,7 @@ public class SampleController4 {
 		
 		rttr.addFlashAttribute("msg", "This is The Message!! with redirected.");
 		
-		return "redirect:/SampleController4/TEST2";
+		return "redirect:/Sample/SampleController4/TEST2";
 	}
 	
 	@RequestMapping("TEST2")

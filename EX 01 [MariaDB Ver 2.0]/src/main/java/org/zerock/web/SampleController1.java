@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.web.log.Log_TEST;
 
 @Controller
-@RequestMapping("SampleController1/")
+@RequestMapping("Sample/SampleController1/")
 public class SampleController1 {
 	
 //	private static final Logger logger = LoggerFactory.getLogger(SampleController1.class);
