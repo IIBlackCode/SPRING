@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	[page 131] 실행할 쿼리문 등록
+// 1. Interface로 실행할 작업 등록
+// 2. 실행할 쿼리문 Mapper 등록
+// 3. 해당 인터페이스를 Overriding으로 구현
+
+SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는다.
+-->
+<mapper namespace="org.zerock.mapper.BoardMapper">
+ 
+ 	<!-- 새로운 게시물의 등록에 사용하는 SQL -->
+	<insert id="create">
+	INSERT INTO tbl_board (title, content, writer, ip)
+	VALUES (#{title}, #{content}, #{writer}, #{ip})
+	</insert>
+	
+	<!-- 게시물의 조회에 사용하는 SQL -->
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+	SELECT * FROM tbl_board WHERE bno = #{bno}
+	</select>
+	
+	<!-- 게시물의 조회에 사용하는 SQL -->
+	<update id="update">
+	UPDATE tbl_board
+	SET title = #{title}
+	, content = #{content}
+	WHERE bno = #{bno}
+	</update>
+ 	
+	<!-- 게시물 삭제에 사용하는 SQL -->
+ 	<delete id="delete">
+ 	DELETE FROM tbl_board WHERE bno = #{bno}
+ 	</delete>
+ 	<!-- <update id="delete">
+ 	/*실제 데이터를 지우지 않고 삭제처리 효과로 수정*/
+ 	UPDATE tbl_board
+ 	SET del_yn = 'Y'
+ 	where bno = #{bno}
+ 	</update> -->
+ 	
+ 	<!-- 게시물 리스트 SQL -->
+ 	<!-- <select id="listAll" resultType="org.zerock.domain.BoardVO">
+ 	<![CDATA[
+	 	SELECT bno, title, content, writer, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		AND del_yn = 'N'
+ 		ORDER BY bno DESC
+ 	]]>
+ 	</select> -->
+ 	<select id="listAll" resultType="org.zerock.domain.BoardVO">
+ 	<![CDATA[
+	 	SELECT bno, title, content, writer, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		ORDER BY bno DESC
+ 	]]>
+ 	</select>
+ 	
+ 	<select id="boardListPage" resultType="org.zerock.domain.BoardVO">
+ 	<![CDATA[
+	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		AND del_yn = 'N'
+ 		ORDER BY bno DESC
+ 		LIMIT #{page}, 10
+ 	]]>
+ 	</select>
+ 	
+ 	<select id="boardListCriteria" resultType="org.zerock.domain.BoardVO">
+ 	<!-- <![CDATA[
+	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		AND del_yn = 'n'
+ 		ORDER BY bno DESC
+ 		LIMIT #{page}, #{perPageNum}
+ 	]]> -->
+ 	<![CDATA[
+	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
+ 		FROM tbl_board
+ 		WHERE del_yn = 'N'
+ 		ORDER BY bno DESC
+ 		LIMIT #{pageStart}, #{perPageNum}
+ 	]]>
+ 	</select>
+ 	
+ 	<select id="boardCountPaging" resultType="int">
+ 	<![CDATA[
+	 	SELECT count(bno)
+ 		FROM tbl_board
+ 		WHERE bno > 0
+ 		AND del_yn = 'N'
+ 	]]>
+ 	</select>
+ 	
+</mapper>
