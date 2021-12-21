@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zerock</groupId>
 	<artifactId>web</artifactId>
-	<name>EX 00 [MariaDB Ver]</name>
+	<name>EX 00 [MariaDB Ver 1.0]</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<!-- 73 PAGE : JDK 버전 변경으로 자바 버전 변경 -->
