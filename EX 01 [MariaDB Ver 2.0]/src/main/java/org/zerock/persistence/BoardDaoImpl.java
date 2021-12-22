@@ -2,28 +2,91 @@ package org.zerock.persistence;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
-//import org.zerock.domain.Criteria;
 
 
-public interface BoardDaoImpl {
+@Repository
+public class BoardDaoImpl implements BoardDao{
 	
-	public void create(BoardVO vo) throws Exception;
+	@Inject
+	private SqlSession session;
 	
-	public BoardVO read(Integer bno) throws Exception;
+	private static final Logger logger = LoggerFactory.getLogger(BoardDaoImpl.class);
 	
-	public int update(BoardVO vo) throws Exception;
+	private static String namespace = "org.zerock.mapper.BoardMapper";
 	
-	public void delete(Integer bno) throws Exception;
+	@Override
+	public void create(BoardVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardCreate() :" + vo);
+		session.insert(namespace+".create",vo);
+	}
+
+	@Override
+	public BoardVO read(Integer bno) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardSelect() :" + bno);
+		return session.selectOne(namespace+".read",bno);
+	}
+
+	@Override
+	public int update(BoardVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardUpdate() :" + vo.toString());
+		logger.info("[boardUpdate() Method] bno :",session.update(namespace+".boardUpdate"));
+		return session.update(namespace+".update",vo);
+	}
+
+	@Override
+	public void delete(Integer bno) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardDelete() :" + bno);
+		logger.info("[boardDelete() Method] bno :"+ bno);
+		session.delete(namespace+".delete",bno);
+	}
+
+	@Override
+	public List<BoardVO> listAll() throws Exception {
+		// TODO Auto-generated method stub
+//		System.out.println("[Dao] boardListAll()" + session.selectList(namespace+".boardSelectAll").toString());	
+		return session.selectList("org.zerock.board.mybatis.BoardTestMapper"+".listAll");
+	}
+
+	@Override
+	public List<BoardVO> boardListPage(int page) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("선택한 페이지 번호 : "+page);
+//		System.out.println("[Dao] boardListPage()" + session.selectList(namespace+".boardListPage").toString());
+		if (page <= 0) {
+			page = 1;
+		}
+		
+		page = (page -1) * 10;
+		System.out.println("입력될 번호 : "+page);
+		
+//		return null;
+		return session.selectList(namespace+".boardListPage",page);
+	}
 	
-	/*게시글 리스트 조회*/
-	public List<BoardVO> listAll() throws Exception;
-	
-	/*게시글 페이징 처리*/
-	public List<BoardVO> boardListPage(int page) throws Exception;
-	
-//	public List<BoardVO> boardCriteria(Criteria criteria) throws Exception;
-//	
-//	public int boardCouontPaging(Criteria criteria)throws Exception;
-	
+	/*
+	@Override
+	public List<BoardVO> boardCriteria(Criteria criteria) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardCriteria() ");
+		return session.selectList(namespace+".boardListCriteria",criteria);
+	}
+
+	@Override
+	public int boardCouontPaging(Criteria criteria) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("[Dao] boardCouontPaging() ");
+		return session.selectOne(namespace+".boardCountPaging", criteria);
+	}
+	*/
 }

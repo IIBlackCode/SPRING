@@ -21,7 +21,7 @@ public class SampleController2 {
 	@RequestMapping("Sample/SampleController2")
 	public String testList( @ModelAttribute("msg") String msg) {
 		loggerTest("SampleController2");
-		return "SampleController2";
+		return "Sample/SampleController2";
 	}
 	
 }

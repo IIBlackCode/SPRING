@@ -33,7 +33,7 @@ public class SampleController3 {
 		
 		model.addAttribute(product);
 		
-		return "SampleController3";
+		return "Sample/SampleController3";
 	}
 	
 }

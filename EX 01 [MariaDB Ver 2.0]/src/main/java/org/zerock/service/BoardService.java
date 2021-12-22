@@ -9,14 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
 //import org.zerock.domain.Criteria;
-import org.zerock.persistence.BoardDao;
+import org.zerock.persistence.BoardDaoImpl;
 
 
 @Service
 public class BoardService implements BoardServiceImpl {
 
 	@Inject
-	private BoardDao dao;
+	private BoardDaoImpl dao;
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardService.class);
 	
