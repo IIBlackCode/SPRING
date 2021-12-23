@@ -38,8 +38,8 @@
 		[page 139] org.zerock.persistence를 스캔해서 @Repository 등록
 		@Repository에서 sqlSession으로 SQL쿼리 동작
 	-->
-	
 	<context:component-scan base-package="org.zerock.persistence" />
-
+	<context:component-scan base-package="org.zerock.service" />
+	<context:component-scan base-package="org.zerock.web" />
 	
 </beans>

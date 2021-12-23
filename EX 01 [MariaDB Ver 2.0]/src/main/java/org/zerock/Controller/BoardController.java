@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.zerock.domain.BoardVO;
-import org.zerock.service.BoardService;
+import org.zerock.service.BoardServiceImpl;
 
 
 @Controller
@@ -20,7 +20,7 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Inject
-	private BoardService service;
+	private BoardServiceImpl service;
 	
 	// 게시판 등록 GET
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -32,7 +32,7 @@ public class BoardController {
 	
 	
 	// 게시판 등록 POST
-	@RequestMapping(value = "/register", method = {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value = "/register", method = {RequestMethod.POST})
 	public String boardRegisterPOST(BoardVO board, Model model, HttpServletRequest request) throws Exception{
 		
 		logger.info("[BOARD] _ /register POST");
@@ -41,8 +41,8 @@ public class BoardController {
 		service.regist(board);
 		
 		model.addAttribute("result","SUCCESS");
-		return "/board/success";
-//		return "redirect:/board/listAll";
+//		return "/board/success";
+		return "redirect:/board/listAll";
 		
 	}// The end of method
 	

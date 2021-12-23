@@ -45,6 +45,6 @@ public class BoardDAOTest {
 	
 	@Test
 	public void testDelete() throws Exception{
-		dao.delete(101);
+		dao.delete(102);
 	}
 }

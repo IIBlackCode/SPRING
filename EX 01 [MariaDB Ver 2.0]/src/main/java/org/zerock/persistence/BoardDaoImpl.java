@@ -39,7 +39,6 @@ public class BoardDaoImpl implements BoardDao{
 	public int update(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardUpdate() :" + vo.toString());
-		logger.info("[boardUpdate() Method] bno :",session.update(namespace+".boardUpdate"));
 		return session.update(namespace+".update",vo);
 	}
 
@@ -54,8 +53,8 @@ public class BoardDaoImpl implements BoardDao{
 	@Override
 	public List<BoardVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
-//		System.out.println("[Dao] boardListAll()" + session.selectList(namespace+".boardSelectAll").toString());	
-		return session.selectList("org.zerock.board.mybatis.BoardTestMapper"+".listAll");
+		logger.info("[listAll() Method]");
+		return session.selectList(namespace+".listAll");
 	}
 
 	@Override

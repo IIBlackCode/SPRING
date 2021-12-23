@@ -26,8 +26,8 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
 	<!-- 게시물의 조회에 사용하는 SQL -->
 	<update id="update">
 	UPDATE tbl_board
-	SET title = #{title}
-	, content = #{content}
+			SET title = #{title},
+		content = #{content}
 	WHERE bno = #{bno}
 	</update>
  	
