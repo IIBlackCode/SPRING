@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.domain.BoardVO;
 import org.zerock.service.BoardServiceImpl;
 
@@ -57,4 +58,13 @@ public class BoardController {
 	
 	}// The end of method
 	
+	// 게시판 읽기
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public void read(@RequestParam("bno") int bno, Model model) throws Exception{
+		
+		logger.info("[BOARD] _ /read GET");
+		
+		model.addAttribute(service.read(bno));
+		
+	}// The end of method
 }

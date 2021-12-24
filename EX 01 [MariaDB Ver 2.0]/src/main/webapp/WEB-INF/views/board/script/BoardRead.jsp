@@ -9,20 +9,20 @@ $(document).ready(function(){
 	
 	$(".btn-warning").on("click", function(){
 		console.log("[Modify]")
-		formObj.attr("action", "/board/modify");
+		formObj.attr("action", "/web/board/modify");
 		formObj.attr("method", "get");		
 		formObj.submit();
 	});
 	
 	$(".btn-danger").on("click", function(){
 		console.log("[REMOVE]")
-		formObj.attr("action", "/board/remove");
+		formObj.attr("action", "/web/board/remove");
 		formObj.submit();
 	});
 	
 	$(".btn-primary").on("click", function(){
 		console.log("[LIST ALL]")
-		self.location = "/board/listAll";
+		self.location = "/web/board/listAll";
 	});
 	
 });
