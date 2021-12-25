@@ -23,7 +23,7 @@ public class BoardController {
 	@Inject
 	private BoardServiceImpl service;
 	
-	// 게시판 등록 GET
+	// 게시글 등록 GET
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void boardRegisterGET(BoardVO board, Model model, HttpServletRequest request) throws Exception{
 		
@@ -32,7 +32,7 @@ public class BoardController {
 	}// The end of method
 	
 	
-	// 게시판 등록 POST
+	// 게시글 등록 POST
 	@RequestMapping(value = "/register", method = {RequestMethod.POST})
 	public String boardRegisterPOST(BoardVO board, Model model, HttpServletRequest request) throws Exception{
 		
@@ -67,4 +67,4 @@ public class BoardController {
 		model.addAttribute(service.read(bno));
 		
 	}// The end of method
-}
+}// The end of class
