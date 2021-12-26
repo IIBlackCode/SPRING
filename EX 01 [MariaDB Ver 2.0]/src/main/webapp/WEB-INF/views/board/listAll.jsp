@@ -41,13 +41,7 @@
 	</div><!-- The end of row -->
 </section><!-- The end of Content -->
 
-<script>
-	var result = '${msg}';
-	if(result == 'SUCCESS'){
-		alert("처리 완료");
-	}
-</script>
-
+<%@ include file="script/listAll.jsp" %>
 <%@ include file="../include/footer.jsp" %>
 
 

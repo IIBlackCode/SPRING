@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
 import org.zerock.service.BoardServiceImpl;
 
@@ -34,7 +35,7 @@ public class BoardController {
 	
 	// 게시글 등록 POST
 	@RequestMapping(value = "/register", method = {RequestMethod.POST})
-	public String boardRegisterPOST(BoardVO board, Model model, HttpServletRequest request) throws Exception{
+	public String boardRegisterPOST(BoardVO board, Model model, HttpServletRequest request, RedirectAttributes rttr) throws Exception{
 		
 		logger.info("[BOARD] _ /register POST");
 		logger.info("board : "+board.toString());
@@ -42,6 +43,8 @@ public class BoardController {
 		service.regist(board);
 		
 		model.addAttribute("result","SUCCESS");
+		
+		rttr.addFlashAttribute("msg", "success");
 //		return "/board/success";
 		return "redirect:/board/listAll";
 		
@@ -58,13 +61,48 @@ public class BoardController {
 	
 	}// The end of method
 	
-	// 게시판 읽기
+	// 게시글 읽기
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno, Model model) throws Exception{
 		
-		logger.info("[BOARD] _ /read GET");
+		logger.info("[BOARD] _ /read GET : ",bno);
 		
 		model.addAttribute(service.read(bno));
 		
 	}// The end of method
+	
+	// 게시글 삭제
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	public String remove(@RequestParam("bno") int bno, Model model) throws Exception{
+		
+		logger.info("[BOARD] _ /remove POST : ",bno);
+		
+		service.remove(bno);
+		
+		return "redirect:/board/listAll";
+	}// The end of method
+	
+	// 게시글 수정페이지 읽기
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public void modifyGET(@RequestParam("bno") int bno, Model model) throws Exception{
+		
+		logger.info("[BOARD] _ /modify GET : ",bno);
+		
+		model.addAttribute(service.read(bno));
+		
+	}// The end of method
+	
+	// 게시글 수정
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modifyPOST(BoardVO board, Model model, RedirectAttributes rttr) throws Exception{
+		
+		logger.info("[BOARD] _ /modify POST : ",board);
+		
+		service.modify(board);
+		
+		rttr.addFlashAttribute("msg", "success");
+		
+		return "redirect:/board/listAll";
+	}// The end of method
+	
 }// The end of class

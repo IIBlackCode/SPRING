@@ -49,8 +49,6 @@
 	<button type="submit" class="btn btn-primary" id="summernote_submit_button">SAVE</button>
 	<button type="submit" class="btn btn-warning">CANCEL</button>
 </div>
-<%@ include file="script/Summernote.jsp" %>
-<%@ include file="script/BoardModifyPage.jsp" %>
 
 
 			</div>
@@ -65,4 +63,6 @@
 </div>
 <!-- /.content-wrapper -->
 
+<%@ include file="script/Summernote.jsp" %>
+<%@ include file="script/BoardModifyPage.jsp" %>
 <%@include file="../include/footer.jsp"%>

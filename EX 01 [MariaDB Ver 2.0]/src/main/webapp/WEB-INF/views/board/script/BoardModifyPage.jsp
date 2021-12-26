@@ -7,13 +7,14 @@
 		console.log(formObj);
 
 		$(".btn-warning").on("click", function() {
-			console.log("[btn-warning]")
-			self.location = "/board/listPage?page=${criteria.page}&perPageNum=${criteria.perPageNum}";
+//			self.location = "/web/board/listPage?page=${criteria.page}&perPageNum=${criteria.perPageNum}";
+			self.location = "/web/board/listAll";
+			console.log("[btn-warning]");
 		});
 
 		$(".btn-primary").on("click", function() {
-			console.log("[btn-primary]")
-			formObj.submit();
+			console.log("[btn-primary]");
+			formObj.submit();;
 		});
 
 	});
