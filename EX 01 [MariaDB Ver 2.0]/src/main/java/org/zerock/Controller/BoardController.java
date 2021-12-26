@@ -88,7 +88,7 @@ public class BoardController {
 		
 		logger.info("[BOARD] _ /modify GET : ",bno);
 		
-		model.addAttribute(service.read(bno));
+		model.addAttribute(service.read(bno)); 
 		
 	}// The end of method
 	
