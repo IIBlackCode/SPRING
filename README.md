@@ -51,6 +51,16 @@ Spring Web Project
 	6.8 MyBatis의 #{} 문법
 	6.9 정리
 	
-	
+[PART 2 기본적인 기능의 게시물 관리]
 
+-[CHAPTER 01] 등록, 수정, 삭제, 조회 기능의 구현
+-[CHAPTER 02] 영속(persistence)계층, 비즈니스 계층
+-[CHAPTER 03] 등록 구현 - 컨트롤러와 프레젠테이션 계층
+-[CHAPTER 04] 전체 목록 구현
+-[CHAPTER 05] 조회 구현
+-[CHAPTER 06] 삭제/수정 처리
+-[CHAPTER 07] 예외 처리
+-[CHAPTER 08] 페이징 처리 - 영속(persistence)계층, 비즈니스 계층
+-[CHAPTER 09] 
+-[CHAPTER 10]
 	
