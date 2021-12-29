@@ -17,13 +17,16 @@ public class Criteria {
 		if (page <= 0) {
 			this.page = 1;
 		}
+		//없으면 외부에서 get방식으로 페이지가 변경되지 않음
+		this.page = page;
 	}// The end of method
 	
 	public void setPerPageNum(int perPageNum) {
 		if (perPageNum <= 0 || perPageNum >100) {
 			this.perPageNum = 10;
 		}
-		this.perPageNum = 10;
+		//없으면 외부에서 get방식으로 페이지가 변경되지 않음
+		this.perPageNum = perPageNum;
 	}// The end of method
 	
 	// 현재 PAGE 정보

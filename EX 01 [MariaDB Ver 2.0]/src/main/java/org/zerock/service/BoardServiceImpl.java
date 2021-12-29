@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
-//import org.zerock.domain.Criteria;
 import org.zerock.persistence.BoardDaoImpl;
 
 

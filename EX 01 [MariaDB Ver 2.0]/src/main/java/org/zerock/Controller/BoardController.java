@@ -20,10 +20,10 @@ import org.zerock.service.BoardServiceImpl;
 @RequestMapping("/board/*")
 public class BoardController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-	
 	@Inject
 	private BoardServiceImpl service;
+	
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	// 게시글 등록 GET
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -110,7 +110,7 @@ public class BoardController {
 	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
 	public void listAll(Criteria cri,Model model) throws Exception{
 
-		logger.info("[BOARD] _ /listAll_Criteria GET");
+		logger.info("[BOARD] _ /listAll_Criteria GET",cri.toString());
 		
 		model.addAttribute("list", service.listCriteria(cri));
 	
