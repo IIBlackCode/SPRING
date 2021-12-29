@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.service.BoardServiceImpl;
 
 
@@ -103,6 +104,16 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "success");
 		
 		return "redirect:/board/listAll";
+	}// The end of method
+	
+	// 페이징처리
+	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
+	public void listAll(Criteria cri,Model model) throws Exception{
+
+		logger.info("[BOARD] _ /listAll_Criteria GET");
+		
+		model.addAttribute("list", service.listCriteria(cri));
+	
 	}// The end of method
 	
 }// The end of class

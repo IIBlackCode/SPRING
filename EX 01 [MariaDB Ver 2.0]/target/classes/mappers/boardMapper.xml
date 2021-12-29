@@ -72,7 +72,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
  	]]>
  	</select>
  	
- 	<select id="boardListCriteria" resultType="org.zerock.domain.BoardVO">
+ 	<select id="listCriteria" resultType="org.zerock.domain.BoardVO">
  	<!-- <![CDATA[
 	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
  		FROM tbl_board
@@ -84,7 +84,8 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
  	<![CDATA[
 	 	SELECT bno, title, content, writer, ip, regdate, viewcnt
  		FROM tbl_board
- 		WHERE del_yn = 'N'
+ 		WHERE bno > 0 
+ 		AND del_yn = 'N'
  		ORDER BY bno DESC
  		LIMIT #{pageStart}, #{perPageNum}
  	]]>

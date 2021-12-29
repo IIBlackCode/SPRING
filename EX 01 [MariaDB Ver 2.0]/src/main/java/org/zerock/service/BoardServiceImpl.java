@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 //import org.zerock.domain.Criteria;
 import org.zerock.persistence.BoardDaoImpl;
 
@@ -58,14 +59,14 @@ public class BoardServiceImpl implements BoardService {
 		logger.info("[Service] BoardService . boardListAll()");
 		return dao.listAll();
 	}
-	/*
 	@Override
-	public List<BoardVO> boardListCriteria(Criteria criteria) throws Exception {
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("[Service] BoardService . boardListCriteria()");
-		return dao.boardCriteria(criteria);
+		return dao.listCriteria(cri);
 	}
 
+	/*
 	@Override
 	public int boardListCountCriteria(Criteria criteria) throws Exception {
 		// TODO Auto-generated method stub

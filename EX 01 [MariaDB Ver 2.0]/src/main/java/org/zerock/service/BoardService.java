@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.zerock.domain.BoardVO;
 //import org.zerock.domain.Criteria;
+import org.zerock.domain.Criteria;
 
 
 public interface BoardService {
@@ -24,7 +25,7 @@ public interface BoardService {
 	public List<BoardVO> listAll() throws Exception;
 	
 	//게시글 페이징처리
-//	public List<BoardVO> boardListCriteria(Criteria criteria) throws Exception;
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 	
 	//
 //	public int boardListCountCriteria(Criteria criteria) throws Exception;

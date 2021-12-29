@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.zerock.domain.BoardVO;
 //import org.zerock.domain.Criteria;
+import org.zerock.domain.Criteria;
 
 
 public interface BoardDao {
@@ -22,7 +23,7 @@ public interface BoardDao {
 	/*게시글 페이징 처리*/
 	public List<BoardVO>listPage(int page) throws Exception;
 	
-//	public List<BoardVO> boardCriteria(Criteria criteria) throws Exception;
+	public List<BoardVO>listCriteria(Criteria cri) throws Exception;
 //	
 //	public int boardCouontPaging(Criteria criteria)throws Exception;
 	

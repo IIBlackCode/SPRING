@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 
 @Repository
@@ -73,14 +74,14 @@ public class BoardDaoImpl implements BoardDao{
 		return session.selectList(namespace+".listPage",page);
 	}
 	
-	/*
 	@Override
-	public List<BoardVO> boardCriteria(Criteria criteria) throws Exception {
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("[Dao] boardCriteria() ");
-		return session.selectList(namespace+".boardListCriteria",criteria);
+		return session.selectList(namespace+".listCriteria",cri);
 	}
 
+	/*
 	@Override
 	public int boardCouontPaging(Criteria criteria) throws Exception {
 		// TODO Auto-generated method stub

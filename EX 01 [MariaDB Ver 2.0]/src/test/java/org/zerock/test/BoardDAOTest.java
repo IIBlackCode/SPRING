@@ -1,5 +1,9 @@
 package org.zerock.test;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -9,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.persistence.BoardDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -46,5 +51,19 @@ public class BoardDAOTest {
 	@Test
 	public void testDelete() throws Exception{
 		dao.delete(102);
+	}
+	
+	@Test
+	public void testListCriteria() throws Exception {
+		
+		Criteria cri = new Criteria();
+		cri.setPage(2);
+		cri.setPerPageNum(20);
+		
+		List<BoardVO> list = dao.listCriteria(cri);
+		
+		for (BoardVO boardVO : list) {
+			logger.info(boardVO.getBno() + ":" +boardVO.getTitle());
+		}
 	}
 }
