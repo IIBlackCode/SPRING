@@ -20,7 +20,7 @@ public interface BoardDao {
 	public List<BoardVO> listAll() throws Exception;
 	
 	/*게시글 페이징 처리*/
-	public List<BoardVO> boardListPage(int page) throws Exception;
+	public List<BoardVO>listPage(int page) throws Exception;
 	
 //	public List<BoardVO> boardCriteria(Criteria criteria) throws Exception;
 //	

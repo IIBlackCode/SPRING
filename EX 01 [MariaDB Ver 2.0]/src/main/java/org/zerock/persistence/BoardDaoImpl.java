@@ -58,7 +58,7 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public List<BoardVO> boardListPage(int page) throws Exception {
+	public List<BoardVO> listPage(int page) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("선택한 페이지 번호 : "+page);
 //		System.out.println("[Dao] boardListPage()" + session.selectList(namespace+".boardListPage").toString());
@@ -70,7 +70,7 @@ public class BoardDaoImpl implements BoardDao{
 		System.out.println("입력될 번호 : "+page);
 		
 //		return null;
-		return session.selectList(namespace+".boardListPage",page);
+		return session.selectList(namespace+".listPage",page);
 	}
 	
 	/*
