@@ -2,8 +2,8 @@ package org.zerock.domain;
 
 public class Criteria {
 	
-	private int page;
-	private int perPageNum; // PAGE당 게시글 수?
+	private int page;		//PAGE DEFAULT 값
+	private int perPageNum; //PAGE당 게시글 수
 	
 	public Criteria() {
 		super();
@@ -34,10 +34,16 @@ public class Criteria {
 		return page;
 	}// The end of method
 	
+	// 진열된 페이지 숫자의 개수
 	public int getPageStart() {
 		return (this.page -1) * perPageNum;
 	}// The end of method
 
+	//
+	public int getPerPageNum() {
+		return this.perPageNum;
+	}
+	
 	@Override
 	public String toString() {
 		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + "]";

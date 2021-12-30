@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.PageMaker;
 import org.zerock.service.BoardServiceImpl;
 
 
@@ -108,7 +109,7 @@ public class BoardController {
 	
 	// 페이징처리
 	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
-	public void listAll(Criteria cri,Model model) throws Exception{
+	public void listAll(Criteria cri, Model model) throws Exception{
 
 		logger.info("[BOARD] _ /listAll_Criteria GET",cri.toString());
 		
@@ -116,4 +117,18 @@ public class BoardController {
 	
 	}// The end of method
 	
+	// 페이징처리
+	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception{
+		
+		logger.info("[BOARD] _ /listPage GET",cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(131);
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+	}// The end of method
 }// The end of class
