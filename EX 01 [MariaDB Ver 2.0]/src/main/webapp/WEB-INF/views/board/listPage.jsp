@@ -46,7 +46,7 @@
 		
 	</ul>
 </div>
- 
+
 <script>
 	var result = '${msg}';
 	if(result == 'SUCCESS'){
