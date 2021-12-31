@@ -32,8 +32,8 @@ public class PageMaker {
 		// 11         = 20       - 10                + 1
 		startPage = (endPage - displayPageNum) + 1;
 		
-		
-		int tempEndPage = (int) (Math.ceil(totalCount/(double) cri.getPageStart()));
+		//						게시글 수 / 
+		int tempEndPage = (int) (Math.ceil(totalCount/(double) cri.getPerPageNum()));
 	
 		if (endPage > tempEndPage) {
 			endPage = tempEndPage;
@@ -41,7 +41,13 @@ public class PageMaker {
 		
 		prev = startPage == 1 ? false : true;
 		next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
-		
+		System.out.println("totalCount : "+totalCount);
+		System.out.println("cri.getPerPageNum() : "+cri.getPerPageNum());
+		System.out.println("endPage : "+endPage);
+		System.out.println("startPage : "+startPage);
+		System.out.println("tempEndPage : "+tempEndPage);
+		System.out.println("prev : "+prev);
+		System.out.println("next : "+next);
 	}
 
 	public int getStartPage() {
@@ -91,7 +97,11 @@ public class PageMaker {
 	public Criteria getCri() {
 		return cri;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "PageMaker [totalCount=" + totalCount + ", startPage=" + startPage + ", endPage=" + endPage + ", prev="
+				+ prev + ", next=" + next + ", displayPageNum=" + displayPageNum + ", cri=" + cri + "]";
+	}
 	
 }
