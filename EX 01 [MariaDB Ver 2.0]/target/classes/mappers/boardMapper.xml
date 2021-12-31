@@ -91,7 +91,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
  	]]>
  	</select>
  	
- 	<select id="boardCountPaging" resultType="int">
+ 	<select id="countPaging" resultType="int">
  	<![CDATA[
 	 	SELECT count(bno)
  		FROM tbl_board

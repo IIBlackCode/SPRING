@@ -65,12 +65,11 @@ public class BoardServiceImpl implements BoardService {
 		return dao.listCriteria(cri);
 	}
 
-	/*
 	@Override
-	public int boardListCountCriteria(Criteria criteria) throws Exception {
+	public int listCountCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("[Service] BoardService . boardListCountCriteria()");
-		return dao.boardCouontPaging(criteria);
+		return dao.couontPaging(cri);
 	}
-	*/
+
 }

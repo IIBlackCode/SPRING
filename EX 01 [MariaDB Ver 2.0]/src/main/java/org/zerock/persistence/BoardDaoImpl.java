@@ -81,12 +81,10 @@ public class BoardDaoImpl implements BoardDao{
 		return session.selectList(namespace+".listCriteria",cri);
 	}
 
-	/*
 	@Override
-	public int boardCouontPaging(Criteria criteria) throws Exception {
+	public int couontPaging(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("[Dao] boardCouontPaging() ");
-		return session.selectOne(namespace+".boardCountPaging", criteria);
+		return session.selectOne(namespace+".countPaging", cri);
 	}
-	*/
+
 }
