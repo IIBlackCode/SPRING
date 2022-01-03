@@ -74,8 +74,8 @@
 
 <form role="form" action="modifyPage" method="post">
 	<input type="hidden" name="bno" value="${board.VO.bno}">
-	<input type="hidden" name="page" value="${criteria.page}">
-	<input type="hidden" name="perPageNum" value="${criteria.perPageNum}">
+	<input type="hidden" name="page" value="${cri.page}">
+	<input type="hidden" name="perPageNum" value="${cri.perPageNum}">
 </form>
 <%@ include file="script/Summernote.jsp" %>
 <%@ include file="script/BoardReadPage.jsp" %>

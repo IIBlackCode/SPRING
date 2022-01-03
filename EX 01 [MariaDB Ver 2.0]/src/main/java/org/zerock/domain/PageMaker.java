@@ -1,5 +1,8 @@
 package org.zerock.domain;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class PageMaker {
 	
 	private int totalCount;	// 총 데이터 수
@@ -48,7 +51,18 @@ public class PageMaker {
 		System.out.println("tempEndPage : "+tempEndPage);
 		System.out.println("prev : "+prev);
 		System.out.println("next : "+next);
-	}
+	}// The end of Method
+	
+	public String makeQuery(int page) {
+		
+		UriComponents uriComponents =
+				UriComponentsBuilder.newInstance()
+				.queryParam("page", page)
+				.queryParam("perPageNum", cri.getPerPageNum())
+				.build();
+		
+		return uriComponents.toString();
+	}// The end of Method
 
 	public int getStartPage() {
 		return startPage;

@@ -5,6 +5,11 @@
 
 <%@ include file="../include/header.jsp" %>
 
+<from id="jobForm">
+	<input type='hidden' name="page" value=${pageMaker.cri.perPageNum}>
+	<input type='hidden' name="perPageNum" value=${pageMaker.cri.perPageNum}>
+</from>
+
 <table class="table table-boardered">
 	<tr>
 		<th style="width : 10px"> BNO</th>
@@ -18,8 +23,8 @@
 	<c:forEach items="${list}" var="boardVO">
 		<tr>
 			<td>${boardVO.bno}</td>
-			<%-- <td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a></td> --%>
-			<td><a href='/board/readPage${pageMaker.makeQuery(pageMaker.cri.page)}}&bno=${boardVO.bno}'>${boardVO.title}</a></td>
+			<!-- <td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a></td> -->
+			<td><a href='/web/board/readPage${pageMaker.makeQuery(pageMaker.cri.page)}&bno=${boardVO.bno}'>${boardVO.title}</a></td>
 			<td>${boardVO.writer}</td>
 			<td>${boardVO.ip}</td>
 			<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
@@ -37,7 +42,8 @@
 		
 		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
             <li <c:out value="${pageMaker.cri.page == idx?'class = active':''}"/>>
-              	<a href="listPage?page=${idx}">${idx}</a>
+              	<!-- <a href="listPage?page=${idx}">${idx}</a> -->
+              	<a href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
         	</li>
 		</c:forEach>
 		

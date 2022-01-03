@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -64,8 +65,8 @@ public class BoardController {
 	}// The end of method
 	
 	// 게시글 읽기
-	@RequestMapping(value = "/read", method = RequestMethod.GET)
-	public void read(@RequestParam("bno") int bno, Model model) throws Exception{
+	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
+	public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri,Model model) throws Exception{
 		
 		logger.info("[BOARD] _ /read GET : ",bno);
 		
@@ -74,14 +75,18 @@ public class BoardController {
 	}// The end of method
 	
 	// 게시글 삭제
-	@RequestMapping(value = "/remove", method = RequestMethod.POST)
-	public String remove(@RequestParam("bno") int bno, Model model) throws Exception{
+	@RequestMapping(value = "/removePage", method = RequestMethod.POST)
+	public String remove(@RequestParam("bno") int bno, Criteria cri, RedirectAttributes rttr) throws Exception{
 		
 		logger.info("[BOARD] _ /remove POST : ",bno);
 		
 		service.remove(bno);
 		
-		return "redirect:/board/listAll";
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum",cri.getPerPageNum());
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/listPage";
 	}// The end of method
 	
 	// 게시글 수정페이지 읽기
@@ -127,10 +132,35 @@ public class BoardController {
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(101);								// TEST 데이터 131개
-//		pageMaker.setTotalCount(service.listCountCriteria(cri));	// 실제 데이터 개수 조회
+		pageMaker.setTotalCount(service.listCountCriteria(cri));	// 실제 데이터 개수 조회
 		System.out.println(pageMaker.toString());
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
+	}// The end of method
+	
+	// 게시글 수정페이지 읽기
+	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
+	public void modifyPagingGET(BoardVO board ,@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model) throws Exception{
+		
+		logger.info("[BOARD] _ /modifyPage GET : ",bno);
+		
+		service.read(bno);
+		model.addAttribute(service.read(bno));
+	}// The end of method
+	
+	// 게시글 수정
+	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
+	public String modifyPOST(BoardVO board, Criteria cri, RedirectAttributes rttr) throws Exception{
+		
+		logger.info("[BOARD] _ /modify POST : ",board);
+		
+		service.modify(board);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum",cri.getPerPageNum());
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/listPage";
 	}// The end of method
 }// The end of class

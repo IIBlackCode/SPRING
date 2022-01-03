@@ -2,13 +2,13 @@
 	$(document).ready(function() {
 		console.log("[BoardModifyPage.jsp]");
 
-		var formObj = $("form[role='boardModifyform']");
+		var formObj = $("form[role='form']");
 
 		console.log(formObj);
 
 		$(".btn-warning").on("click", function() {
-//			self.location = "/web/board/listPage?page=${criteria.page}&perPageNum=${criteria.perPageNum}";
-			self.location = "/web/board/listAll";
+//			self.location = "/web/board/listAll";
+			self.location = "/web/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 			console.log("[btn-warning]");
 		});
 

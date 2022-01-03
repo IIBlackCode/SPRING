@@ -15,17 +15,16 @@
 				</div>
 				<!-- /.box-header -->
 
-<form role="boardModifyform" method="post" id="summernote_submit_form">
+<form role="form" action="modifyPage" method="post" id="summernote_submit_form">
 	
-	<input type="hidden" name="page" value="${criteria.page}">
-	<input type="hidden" name="perPageNum" value="${criteria.perPageNum}">
+	<input type="hidden" name="page" value="${cri.page}">
+	<input type="hidden" name="perPageNum" value="${cri.perPageNum}">
 	
 	<div class="box-body">
 
 		<div class="form-group">
-			<label for="exampleInputEmail1">BNO</label> <input type="text"
-				name='bno' class="form-control" value="${boardVO.bno}"
-				readonly="readonly">
+			<label for="exampleInputEmail1">BNO</label> 
+			<input type="text" name='bno' class="form-control" value="${boardVO.bno}" readonly="readonly">
 		</div>
 
 		<div class="form-group">
@@ -53,7 +52,7 @@
 	<button type="submit" class="btn btn-warning">CANCEL</button>
 </div>
 <%@ include file="script/Summernote.jsp" %>
-<%@ include file="script/BoardModify.jsp" %>
+<%@ include file="script/BoardModifyPage.jsp" %>
 
 
 			</div>
