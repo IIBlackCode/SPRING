@@ -131,7 +131,7 @@ public class BoardController {
 		model.addAttribute("list", service.listCriteria(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(101);								// TEST 데이터 131개
+		//pageMaker.setTotalCount(101);								// TEST 데이터 131개
 		pageMaker.setTotalCount(service.listCountCriteria(cri));	// 실제 데이터 개수 조회
 		System.out.println(pageMaker.toString());
 		
