@@ -54,7 +54,6 @@
 	<c:forEach items="${list}" var="boardVO">
 		<tr>
 			<td>${boardVO.bno}</td>
-			<!-- <td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a></td> -->
 			<td><a href='/web/board/readPage${pageMaker.makeQuery(pageMaker.cri.page)}&bno=${boardVO.bno}'>${boardVO.title}</a></td>
 			<td>${boardVO.writer}</td>
 			<td>${boardVO.ip}</td>
@@ -86,13 +85,23 @@
 </div>
 
 <script>
+var result = '${msg}';
+if(result == 'SUCCESS'){
+	alert("처리 완료");
+}
 $(document).ready(function(){
-	alert("test")
+	$('#searchBtn').on("click",function(event){
+		self.location = "list"
+			+ '${pageMaker.makeQuery(1)}'
+			+ "&searchType="
+			+ $("select option:selected").val()
+			+ "&keyword=" + encodeURIComponent($('#keywordInput').val());
+	});
+	
+	$('#newBtn').on("click",function(evt){
+		self.location="register";
+	});
 });
-	var result = '${msg}';
-	if(result == 'SUCCESS'){
-		alert("처리 완료");
-	}
 </script>
 
 <%@ include file="../include/footer.jsp" %>

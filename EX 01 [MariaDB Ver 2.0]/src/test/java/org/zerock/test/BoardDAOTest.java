@@ -16,6 +16,7 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 import org.zerock.persistence.BoardDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,7 +28,7 @@ public class BoardDAOTest {
 	
 	private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 	
-	@Test
+	//@Test
 	public void testCreate() throws Exception{
 		BoardVO board = new BoardVO();
 		board.setTitle("Create New Title Test");
@@ -36,12 +37,12 @@ public class BoardDAOTest {
 		dao.create(board);
 	}
 	
-	@Test
+	//@Test
 	public void testRead() throws Exception{
 		logger.info(">>"+dao.read(100));
 	}
 	
-	@Test
+	//@Test
 	public void testUpdate() throws Exception{
 		BoardVO board = new BoardVO();
 		board.setBno(100);
@@ -50,12 +51,12 @@ public class BoardDAOTest {
 		dao.update(board);
 	}
 	
-	@Test
+	//@Test
 	public void testDelete() throws Exception{
 		dao.delete(102);
 	}
 	
-	@Test
+	//@Test
 	public void testListCriteria() throws Exception {
 		
 		Criteria cri = new Criteria();
@@ -69,7 +70,7 @@ public class BoardDAOTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void testURI() throws Exception{
 		UriComponents uriComponents = 
 				UriComponentsBuilder
@@ -83,7 +84,7 @@ public class BoardDAOTest {
 		logger.info(uriComponents.toString());
 	}
 	
-	@Test
+	//@Test
 	public void testURI2() throws Exception{
 		UriComponents uriComponents = 
 				UriComponentsBuilder
@@ -97,5 +98,25 @@ public class BoardDAOTest {
 		
 		logger.info("/web/board/read?bno=12&perPageNum=20");
 		logger.info(uriComponents.toString());
+	}
+	
+	@Test
+	public void testDynamic1() throws Exception {
+		
+		SearchCriteria cri = new SearchCriteria();
+		cri.setPage(1);
+		cri.setKeyword("글");
+		cri.setSearchType("t");
+		
+		logger.info("================================================");
+		
+		List<BoardVO> list = dao.listSearch(cri);
+		
+		for (BoardVO boardVO : list) {
+			logger.info(boardVO.getBno() + " : "+boardVO.getTitle());
+		}
+		
+		logger.info("================================================");
+		logger.info("COUNT : "+dao.listSearchCount(cri));
 	}
 }

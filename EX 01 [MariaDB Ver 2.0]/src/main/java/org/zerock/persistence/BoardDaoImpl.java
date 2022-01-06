@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 
 
 @Repository
@@ -85,6 +86,18 @@ public class BoardDaoImpl implements BoardDao{
 	public int couontPaging(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".countPaging", cri);
+	}
+
+	@Override
+	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".listSearchCount", cri);
 	}
 
 }
