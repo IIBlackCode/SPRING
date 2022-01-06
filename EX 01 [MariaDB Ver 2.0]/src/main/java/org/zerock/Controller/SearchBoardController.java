@@ -27,7 +27,7 @@ public class SearchBoardController {
 		
 		logger.debug("test",cri.toString());
 		
-		model.addAttribute("list", service.listCountCriteria(cri));
+		model.addAttribute("list", service.listCriteria(cri));
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
