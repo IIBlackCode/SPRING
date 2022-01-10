@@ -5,6 +5,7 @@ import java.util.List;
 import org.zerock.domain.BoardVO;
 //import org.zerock.domain.Criteria;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 
 
 public interface BoardService {
@@ -29,5 +30,11 @@ public interface BoardService {
 	
 	//
 	public int listCountCriteria(Criteria cri) throws Exception;
+	
+	// 검색어 게시글
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+	
+	// 검색어 카운트
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 	
 }
