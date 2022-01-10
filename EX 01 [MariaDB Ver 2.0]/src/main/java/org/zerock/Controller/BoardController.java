@@ -134,7 +134,7 @@ public class BoardController {
 		//pageMaker.setTotalCount(101);								// TEST 데이터 131개
 		pageMaker.setTotalCount(service.listCountCriteria(cri));	// 실제 데이터 개수 조회
 		System.out.println(pageMaker.toString());
-		
+		 
 		model.addAttribute("pageMaker", pageMaker);
 		
 	}// The end of method
