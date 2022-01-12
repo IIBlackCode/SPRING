@@ -17,7 +17,6 @@ import org.zerock.domain.Criteria;
 import org.zerock.domain.PageMaker;
 import org.zerock.service.BoardServiceImpl;
 
-
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
