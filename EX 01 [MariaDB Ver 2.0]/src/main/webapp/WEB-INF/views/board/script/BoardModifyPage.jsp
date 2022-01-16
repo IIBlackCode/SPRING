@@ -8,7 +8,8 @@
 
 		$(".btn-warning").on("click", function() {
 //			self.location = "/web/board/listAll";
-			self.location = "/web/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
+			self.location = "/web/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
+					+"&searchType=${cri.searchType}&keyword=${cri.keyword}";
 			console.log("[btn-warning]");
 		});
 
