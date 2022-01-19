@@ -117,4 +117,14 @@ Spring Web Project 2022-01-19
 	9.7 목록 페이지와 정보 
 
 -[CHAPTER 10]
+
+	10.1 검색에 필요한 데이터와 SearchCriteria
+	10.2 SearchBoardController의 작성
+	10.3 검색에 필요한 JSP 수정
+	10.4 MyBatis 동적 SQL
+	10.5 BoardService와 SearchBoardController의 수정
+	10.6 조회, 수정, 삭제 페이지의 처리
+	10.7 등록 페이지 처리
+	10.8 최종적인 결말 확인
+	10.9 정리
 	
