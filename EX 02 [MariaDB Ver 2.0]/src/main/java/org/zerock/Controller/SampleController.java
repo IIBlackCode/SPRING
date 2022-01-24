@@ -9,7 +9,9 @@ public class SampleController {
 	
 	@RequestMapping("hello")
 	public String sayHello() {
+		
 		return "Hello World";
+		
 	}
 	
 }
