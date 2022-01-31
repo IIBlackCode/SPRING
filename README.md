@@ -202,3 +202,49 @@ Spring Web Project 2022-01-31
 ### -[CHAPTER 03]
 
 ### -[CHAPTER 04]
+
+---------------------------------------------------------------------------------------------------------------------
+
+<pre>
+	<code>
+	
+CREATE DATABASE BOOK_EX;
+CREATE TABLE tbl_member(
+
+	userid		VARCHAR(50) 	NOT NULL PRIMARY KEY,
+	userpw		VARCHAR(50) 	NOT NULL,
+	username	VARCHAR(50) 	NOT	NULL,
+	email		VARCHAR(100)	NOT NULL,
+	regdate		TIMESTAMP 		NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	updatedate	TIMESTAMP 		NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+);
+
+CREATE TABLE tbl_board(
+
+	bno		INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	title	VARCHAR(200) 	NOT NULL,
+	content	TEXT 			NULL,
+	writer	VARCHAR(50)		NOT NULL,
+	regdate	TIMESTAMP 		NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	viewcnt	INT				DEFAULT 0,
+	ip		VARCHAR(50)		DEFAULT '0.0.0.0'
+	del_yn VARCHAR(1)		DEFAULT 'n',
+);
+
+DROP TABLE tbl_board;
+DROP TABLE tbl_member;
+
+CREATE TABLE tbl_reply (
+	RNO INT NOT NULL AUTO_INCREMENT,
+	BNO INT NOT NULL DEFAULT 0,
+	REPLYTEXT VARCHAR(1000) NOT NULL,
+	REPLYER VARCHAR(50) NOT NULL,
+	REGDATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	UPDATEDATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	PRIMARY KEY(RNO)
+);
+	</code>
+</pre>
+
+
