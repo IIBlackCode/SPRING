@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	[page 373] 실행할 쿼리문 등록
+// 1. Interface로 실행할 작업 등록
+// 2. 실행할 쿼리문 Mapper 등록
+// 3. 해당 인터페이스를 Overriding으로 구현
+
+SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는다.
+-->
+<mapper namespace="org.zerock.mapper.ReplyMapper">
+	
+	<!-- 게시물의 조회에 사용하는 SQL -->
+	<select id="list" resultType="org.zerock.domain.ReplyVO">
+		SELECT * FROM tbl_reply WHERE bno = #{bno} ORDER BY RNO DESK
+	</select>
+	
+	<insert id="create">
+		INSERT INTO tbl_reply (bno, replytext, replyer)
+		VALUES (#{bno}, #{replytext}, #{replyer})
+	</insert>
+	
+	<!-- 게시물의 조회에 사용하는 SQL -->
+	<update id="update">
+		UPDATE tbl_reply
+			SET replytext = #{replytext}, updatedate = now()
+		WHERE rno = #{rno}
+	</update>
+ 	
+	<!-- 게시물 삭제에 사용하는 SQL -->
+ 	<delete id="delete">
+ 		DELETE FROM tbl_reply WHERE rno = #{rno}
+ 	</delete>
+</mapper>
