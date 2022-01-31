@@ -55,7 +55,7 @@ Spring Web Project 2022-01-31
 	
 		
 	
-##[PART 2 기본적인 기능의 게시물 관리]
+## [PART 2 기본적인 기능의 게시물 관리]
 
 -[CHAPTER 01] 등록, 수정, 삭제, 조회 기능의 구현
 
@@ -128,7 +128,7 @@ Spring Web Project 2022-01-31
 	10.8 최종적인 결말 확인
 	10.9 정리
 
-##[PART 3 Ajax 댓글 처리]
+## [PART 3 Ajax 댓글 처리]
 
 -[CHAPTER 01] RestController 와 Ajax
 
@@ -153,18 +153,25 @@ Spring Web Project 2022-01-31
 
 ### -[CHAPTER 05]
 
-##[PART 5]
+## [PART 5]
 
 -[CHAPTER 01]
+
 -[CHAPTER 02]
+
 -[CHAPTER 03]
+
 -[CHAPTER 04]
+
 -[CHAPTER 05]
+
 -[CHAPTER 06]
+
 -[CHAPTER 07]
+
 -[CHAPTER 08]
 
-	##[PART 6]
+## [PART 6]
 
 -[CHAPTER 01]
 -[CHAPTER 02]
