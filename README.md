@@ -141,6 +141,10 @@ Spring Web Project 2022-01-31
 	1.3 테스트용 컨트롤러 생성하기
 	
 ### -[CHAPTER 02]
+	
+	2.1 Advanced REST Client를 이용한 테스트
+	2.2 REST와 Ajax
+	2.3 댓글 처리를 위한 준비
 
 ### -[CHAPTER 03]
 
