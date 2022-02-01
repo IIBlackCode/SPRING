@@ -217,6 +217,16 @@ TOMCAT : 8.5v
 ### -[CHAPTER 03]
 
 ### -[CHAPTER 04]
+***
+# log4jdbc.log4j2.properties
+
+	#140 PAGE 
+
+	# log4jdbc를 인식못하는 에러 발생 수정
+	# log4jdbc.drivers=org.mariadb.jdbc.Driver 추가
+
+	log4jdbc.drivers=org.mariadb.jdbc.Driver
+	log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 
 ***
 # mybatis-config.xml
