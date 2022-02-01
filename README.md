@@ -2,6 +2,11 @@
 Spring Web Project 2022-01-31
 
 코드로 배우는 스프링 웹프로젝트
+
+DB : MariaDB
+SERVER : LINUX 20.04 LTS
+TOMCAT : 8.5v
+
 ***
 ## [PART 1 프로젝트의 기본 구조 구성]
 
