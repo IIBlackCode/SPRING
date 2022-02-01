@@ -140,13 +140,13 @@ Spring Web Project 2022-01-31
 	1.2 예제 프로젝트의 생성
 	1.3 테스트용 컨트롤러 생성하기
 	
-### -[CHAPTER 02]
+### -[CHAPTER 02] 댓글 처리와 REST
 	
 	2.1 Advanced REST Client를 이용한 테스트
 	2.2 REST와 Ajax
 	2.3 댓글 처리를 위한 준비
 
-### -[CHAPTER 03]
+### -[CHAPTER 03] REST 방식의 ReplyController 작성
 	
 	3.1 등록 처리
 	3.2 특정 게시물의 전체 댓글 목록의 처리
