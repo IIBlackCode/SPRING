@@ -44,4 +44,14 @@
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- [PAGE : 387] web.xml 필터설정 추가 -->
+	<filter>
+		<filter-name>httpFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>httpFilter</filter-name>
+		<servlet-name>/*</servlet-name>
+	</filter-mapping>
 </web-app>

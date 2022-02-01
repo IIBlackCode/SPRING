@@ -12,7 +12,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
 -->
 <mapper namespace="org.zerock.mapper.ReplyMapper">
 	
-	<!-- 게시물의 조회에 사용하는 SQL -->
+	<!-- 댓글 조회에 사용하는 SQL -->
 	<select id="list" resultType="org.zerock.domain.ReplyVO">
 		SELECT * FROM tbl_reply WHERE bno = #{bno} ORDER BY RNO DESK
 	</select>
@@ -22,15 +22,27 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
 		VALUES (#{bno}, #{replytext}, #{replyer})
 	</insert>
 	
-	<!-- 게시물의 조회에 사용하는 SQL -->
+	<!-- 댓글 조회에 사용하는 SQL -->
 	<update id="update">
 		UPDATE tbl_reply
 			SET replytext = #{replytext}, updatedate = now()
 		WHERE rno = #{rno}
 	</update>
  	
-	<!-- 게시물 삭제에 사용하는 SQL -->
+	<!-- 댓글 삭제에 사용하는 SQL -->
  	<delete id="delete">
  		DELETE FROM tbl_reply WHERE rno = #{rno}
  	</delete>
+ 	
+ 	<!-- 댓글 페이징처리 SQL -->
+ 	<select id="listPage" resultType="ReplyVO">
+ 		SELECT * FROM tbl_reply 
+ 		WHERE rno = #{rno}
+ 		ORDER BY rno DESC
+ 		LIMIT #{cri.pageStart}, #{cri.pageNum}
+ 	</select>
+ 	
+ 	<select id="count" resultType="int">
+ 		SELECT count(bno) FROM tbl_reply WHERE bno = #{bno}
+ 	</select>
 </mapper>
