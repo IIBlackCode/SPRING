@@ -2,7 +2,7 @@
 Spring Web Project 2022-01-31
 
 코드로 배우는 스프링 웹프로젝트
-
+***
 ## [PART 1 프로젝트의 기본 구조 구성]
 
 ### -[CHAPTER 01] 개발 환경의 설정
@@ -131,7 +131,7 @@ Spring Web Project 2022-01-31
 	
 	
 	
-	
+***
 ## [PART 3 Ajax 댓글 처리]
 
 ### -[CHAPTER 01] RestController 와 Ajax
@@ -141,6 +141,10 @@ Spring Web Project 2022-01-31
 	1.3 테스트용 컨트롤러 생성하기
 	
 ### -[CHAPTER 02]
+	
+	2.1 Advanced REST Client를 이용한 테스트
+	2.2 REST와 Ajax
+	2.3 댓글 처리를 위한 준비
 
 ### -[CHAPTER 03]
 
@@ -152,7 +156,7 @@ Spring Web Project 2022-01-31
 
 
 
-
+***
 ## [PART 4]
 
 ### -[CHAPTER 01]
@@ -169,7 +173,7 @@ Spring Web Project 2022-01-31
 
 
 
-
+***
 ## [PART 5]
 
 ### -[CHAPTER 01]
@@ -192,7 +196,7 @@ Spring Web Project 2022-01-31
 
 
 
-
+***
 ## [PART 6]
 
 ### -[CHAPTER 01]
@@ -203,7 +207,7 @@ Spring Web Project 2022-01-31
 
 ### -[CHAPTER 04]
 
----------------------------------------------------------------------------------------------------------------------
+***
 
 <pre>
 	<code>
