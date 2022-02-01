@@ -219,7 +219,29 @@ TOMCAT : 8.5v
 ### -[CHAPTER 04]
 
 ***
+# mybatis-config.xml
+<pre>
+	<code>
 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <!-- 183 PAGE -->
+  
+<configuration>
+
+	<typeAliases>
+		<package name="org.zerock.board.domain"/>
+	</typeAliases>
+	
+</configuration>
+
+	</code>
+</pre>
+
+***
+# DATABASE QUERRY [MariaDB Ver]
 <pre>
 	<code>
 	
