@@ -1,7 +1,12 @@
 # SPRING
-Spring Web Project 2022-01-31
+Spring Web Project 2022-02-12
 
 코드로 배우는 스프링 웹프로젝트
+
+DB : MariaDB
+SERVER : LINUX 20.04 LTS
+TOMCAT : 8.5v
+
 ***
 ## [PART 1 프로젝트의 기본 구조 구성]
 
@@ -140,14 +145,20 @@ Spring Web Project 2022-01-31
 	1.2 예제 프로젝트의 생성
 	1.3 테스트용 컨트롤러 생성하기
 	
-### -[CHAPTER 02]
+### -[CHAPTER 02] 댓글 처리와 REST
 	
 	2.1 Advanced REST Client를 이용한 테스트
 	2.2 REST와 Ajax
 	2.3 댓글 처리를 위한 준비
 
-### -[CHAPTER 03]
-
+### -[CHAPTER 03] REST 방식의 ReplyController 작성
+	
+	3.1 등록 처리
+	3.2 특정 게시물의 전체 댓글 목록의 처리
+	3.3 수정 처리
+	3.4 삭제 처리
+	3.5 페이징 처리
+	
 ### -[CHAPTER 04]
 
 ### -[CHAPTER 05]
@@ -206,9 +217,36 @@ Spring Web Project 2022-01-31
 ### -[CHAPTER 03]
 
 ### -[CHAPTER 04]
+***
+# log4jdbc.log4j2.properties
+
+	#140 PAGE 
+
+	# log4jdbc를 인식못하는 에러 발생 수정
+	# log4jdbc.drivers=org.mariadb.jdbc.Driver 추가
+
+	log4jdbc.drivers=org.mariadb.jdbc.Driver
+	log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 
 ***
+# mybatis-config.xml
 
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE configuration
+	  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	  <!-- 183 PAGE -->
+
+	<configuration>
+
+		<typeAliases>
+			<package name="org.zerock.board.domain"/>
+		</typeAliases>
+
+	</configuration>
+
+***
+# DATABASE QUERRY [MariaDB Ver]
 <pre>
 	<code>
 	
