@@ -35,7 +35,7 @@ SELECT 문에서 resultType을 명시하지 않으면 값이 Return되지 않는
  	</delete>
  	
  	<!-- 댓글 페이징처리 SQL -->
- 	<select id="listPage" resultType="ReplyVO">
+ 	<select id="listPage" resultType="org.zerock.domain.ReplyVO">
  		SELECT * FROM tbl_reply 
  		WHERE rno = #{rno}
  		ORDER BY rno DESC
